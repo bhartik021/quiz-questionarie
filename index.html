@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="./main.js" async></script>
+</head>
+<body>
+  <div class="container">
+      <h1>Quiz Questionarie</h1>
+
+    <section>
+        <form>
+                <label id="name" class="is-visible">
+                    <label class="label-heading" for="age">What is your age?</label>
+                    <input name="age" type="number" placeholder="age" required />
+                    
+                    <div class="nav-btn-div">
+                        <button type="button" class="nav-button" value="next" onclick="next('name','diabetes')">OK <i class="fa fa-check" aria-hidden="true"></i></button>
+                        Press <strong>Enter ↵</strong>
+                   </div>
+                  
+                    <div class="nav-btn-div">
+                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('age','diabetes')"></i>
+                    </div>
+                </label>
+                <label id="diabetes">
+                    <label class="label-heading" for="diabetes">Have you been told by a doctor that you have diabetes during this pregnancy?</label>
+                    <input type="text" name="diabetes" placeholder="diabetes" required />
+                    <br>
+                    <div class="nav-btn-div">
+                        <button type="button" class="nav-button" value="next" onclick="next('diabetes','phone')">OK</button>
+                        Press <strong>Enter ↵</strong>
+                   </div>
+                    <div class="nav-btn-div">
+                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('diabetes','age')"></i>
+                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('diabetes','phone')"></i>
+                    </div>
+                </label>
+                <label id="phone">
+                    <label class="label-heading" for="phone">Phone number</label>
+                    <input type="tel" name="phone" placeholder="phone" required />
+                    <br>
+                    <div class="nav-btn-div">
+                        <button type="button" class="nav-button" value="next" onclick="next('phone','age')">OK <i class="fa fa-check" aria-hidden="true"></i></button>
+                        Press <strong>Enter ↵</strong>
+                   </div>
+                    <div class="nav-btn-div">
+                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('phone', 'email')"></i>
+                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('phone','age')"></i>
+                    </div>
+                </label>
+                <label id="age">
+                    <label class="label-heading" for="age">How old are you?</label>
+                    <input type="number" name="age" placeholder="age" min="18" required />
+                    <br>
+                    <div class="nav-btn-div">
+                        <button type="button" class="nav-button" value="next" onclick="next('age','address')">OK <i class="fa fa-check" aria-hidden="true"></i></button>
+                        Press <strong>Enter ↵</strong>
+                   </div>
+                    <div class="nav-btn-div">
+                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('age', 'phone')"></i>
+                        <i class="fa fa-arrow-down" style="font-size:24px" onclick="next('age','address')"></i>
+                    </div>
+                </label>
+                <label id="address">
+                    <label class="label-heading" for="address">What's your address?</label>
+                    <input name="address" type="text" placeholder="address" required />
+                    <br>
+                    <div class="nav-btn-div">
+                        <i class="fa fa-arrow-up" style="font-size:24px" onclick="previous('address','age')"></i>
+                        <button type="submit" class="nav-button" value="submit" >Submit</button>
+                    </div>
+                </label>
+                <p id="validate"></p>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
